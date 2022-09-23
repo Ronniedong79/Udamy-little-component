@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'udamy-assign-css';
+
+  // @Output('nemberEven') firedEvenNumber = new EventEmitter<number> ();
+  // @Output('nemberOdd') firedOddNumber = new EventEmitter<number> ();
+  numberEvens: number[] = [];
+  numberOdds: number[] = [];
+
+  numberEmit (firedNumber: number) {
+    if (firedNumber % 2 == 0) {
+      this.numberEvens.push(firedNumber);
+    } else {
+      this.numberOdds.push(firedNumber);
+    }
+  }
+
+
 }

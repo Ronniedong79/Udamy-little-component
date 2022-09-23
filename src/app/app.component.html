@@ -1,5 +1,20 @@
-<div class="row">
-  <div class="col-xs-3">
-    <button class="btn btn-primary">Start/Stop</button>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12"></div>
+  </div>
+  <app-game-control (numberListener)="numberEmit($event)"></app-game-control>
+  <div class="row">
+    <div class="col-xs-6">
+      <app-odd
+        *ngFor="let numberOdd of numberOdds"
+        [oddNumberSpecialist]="numberOdd"
+      ></app-odd>
+    </div>
+    <div class="col-xs-6">
+      <app-even
+        *ngFor="let numberEven of numberEvens"
+        [evenNumberSpecialist]="numberEven"
+      ></app-even>
+    </div>
   </div>
 </div>
